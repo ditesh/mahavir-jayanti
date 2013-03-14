@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-        </style>
+        <title>Mahavir Jayanti 2013</title>
         <link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Gabriela' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
@@ -10,14 +9,14 @@
     </head>
     <body>
 
-        <a id="programme-trigger" href="#programme">
+        <a id="programme-trigger" href="#programme" class="normal-a">
             <div id="programme-icon" class="pic">
-                <img src="images/cradle.png" alt="portrait">
+                <img src="images/cradle2.png" alt="portrait">
             </div>
             <div id="programme-icon-text">PROGRAMME</div>
         </a>
 
-        <a id="charity-trigger" href="#programme">
+        <a id="charity-trigger" href="#charity">
             <div id="charity-icon" class="pic">
                 <img src="images/charity.jpg" alt="portrait">
             </div>
@@ -25,17 +24,17 @@
         </a>
 
         <a id="chariot-trigger" href="#chariot">
-            <div id="chariot-icon" class="pic">
+            <div id="chariot-icon" class="pic" style="background-color: #2A0A0A; background-image: url('images/float2.jpg'); background-repeat: no-repeat;">
                 <img id="chariot-image" src="images/float1.jpg" alt="portrait">
             </div>
-            <div id="chariot-icon-text">CHARIOT EVENT</div>
+            <div id="chariot-icon-text">A JOURNEY OF DREAMS</div>
         </a>
 
         <a href="http://facebook.com">
             <div id="past-events-icon" class="pic">
-                <img src="images/cradle.png" alt="portrait">
+                <img src="images/past-events.jpg" alt="portrait">
             </div>
-            <div id="past-events-icon-text">PAST EVENTS</div>
+            <div id="past-events-icon-text">1998 to 2012</div>
         </a>
 
         <div id="container">
@@ -68,6 +67,7 @@
                 (The Birth of Bhagwan Shree Mahavir)
             </h1>
             <h3>
+                <img src="images/gawps.png">
                 <br>
                 This auspicious event is celebrated
                 <br>
@@ -77,7 +77,7 @@
             </h3>
         </div>
 
-        <div id="programme">
+        <div id="programme" class="modal">
 
             <div style="position: absolute; left: 10px; top: 40px">
                 <img src="images/left-pillar.jpg">
@@ -91,6 +91,12 @@
 
                 <h1 style="color: red;">Programme</h1>
                 <table>
+                    <thead>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Event</th>
+                        <th>Venue</th>
+                    </thead>
                     <tr>
                         <td>Tuesday<br>23rd April 2013</td>
                         <td>8.30pm</td>
@@ -118,10 +124,31 @@
                 </table>
                 <br>
                 <img src="images/divider.gif">
-                <div style="text-align: justify; font-size: 15px; margin-left: 120px; margin-right: 120px">
+                <div class="modal-text">
                     <p>This year's Mahavir Jayanti takes a new dimension as we have invited a professional singer <a target="_blank" href="http://www.jainsinger.com/">Vijaybhai Doshi</a> who has performed in many parts of the world with his melodious voice. Vijaybhai Doshi who also plays the musical keyboard will render beautiful, latest and lively stavans fit for this auspicious occassion of Mahavir Jayanti.</p>
                     <p>Together with Vijaybhai, we also will have Hiteshbhai Doshi in our midst who will complement Vijaybhai in his stavans. Hiteshbhai, a young and vibrant presenter, is able to reach the hearts of all present with his humour, simplicity of delivery in English/Gujarati for both young and old.</p>
                     <p style="text-align: center; color: red; font-weight: bold; font-family: Gabriela">Please come together with your family and friends to make this auspicious occassion a memorable one for all and be blessed by<br>Bhagwan Shree Mahavir.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="charity" class="modal">
+
+            <div style="position: absolute; left: 10px; top: 40px">
+                <img src="images/left-pillar.jpg">
+            </div>
+
+            <div style="position: absolute; right: 10px; top: 40px">
+                <img src="images/right-pillar.jpg">
+            </div>
+
+            <div style="width: 100%; text-align: center">
+
+                <h1 style="color: red;">The Damani Indira Vrajlal<br>Charitable Fund</h1>
+                <div class="modal-text">
+                    <p>The Damani Parivar will host a charitable event at the Paediatric Ward, <a target="_blank" href="http://www.hkl.gov.my/">General Hospital Kuala Lumpur</a> on Saturday, 27th April 2013. We plan to spend some time with the children at the Paediatric Ward with games, fun and gifts.</p>
+                    <p>We request your helping hand in serving in this charity programme. As the Hospital limits the number of visitors, we appreciate if you could kindly call So-and-So to volunteer.</p>
                 </div>
             </div>
 
@@ -138,34 +165,38 @@
 
                 // Event handlers for programme icon
                 $("#programme-icon, #programme-icon-text")
-                .mouseover(function() {
+                .hover(function() {
                     $("#programme-icon").addClass("animated swing");
-                })
-                .mouseout(function() {
+                }, function() {
                     $("#programme-icon").removeClass("animated swing");
                 });
 
                 // Event handlers for charity icon
                 $("#charity-icon, #charity-icon-text")
-                .mouseover(function() {
+                .hover(function() {
                     $("#charity-icon").addClass("morph");
-                })
-                .mouseout(function() {
+                },function() {
                     $("#charity-icon").removeClass("morph");
                 });
 
                 // Event handlers for chariot icon
                 $("#chariot-icon, #chariot-icon-text")
-                .mouseover(function() {
-                    $("#chariot-image").attr("src", "images/float2.jpg");
-                })
-                .mouseout(function() {
-                    $("#chariot-image").attr("src", "images/float1.jpg");
+                .hover(function() {
+                    $("#chariot-image").animate({ opacity: 0}, 1000);
+                }, function() {
+                    $("#chariot-image").animate({ opacity: 1}, 1000);
                 });
 
+                // Event handlers for past events icon
+                $("#past-events-icon, #past-events-icon-text")
+                .hover(function() {
+                    $("#past-events-icon img").animate({"marginLeft": "-100px"}, 1000);
+                }, function() {
+                    $("#past-events-icon img").animate({"marginLeft": "0px"}, 1000);
+                });
 
-                $("#programme-trigger, #charity-trigger, #chariot-trigger").leanModal({ opacity : 0.4 });
-                $("#circle").css("left", widthOffset - $("#circle").width()/2).fadeIn(2000, function() {
+                $("#programme-trigger, #charity-trigger, #chariot-trigger").leanModal({ opacity : 0.4, top: 60 });
+                $("#circle").css("left", widthOffset - 683/2).fadeIn(2000, function() {
 
                     $("#pulsating-mahavir")
                     .css("left", widthOffset - $("#pulsating-mahavir").width()/2)
@@ -185,9 +216,7 @@
                                         $("#programme-icon-text, #charity-icon-text, #chariot-icon-text, #past-events-icon-text").fadeIn("slow");
 
                                     });
-
                                 });
-
                             });
                         });
                     });
