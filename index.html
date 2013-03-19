@@ -30,7 +30,7 @@
             <div id="chariot-icon-text">A JOURNEY OF DREAMS</div>
         </a>
 
-        <a href="http://facebook.com">
+        <a target="_blank" href="http://facebook.com">
             <div id="past-events-icon" class="pic">
                 <img src="images/past-events.jpg" alt="portrait">
             </div>
@@ -111,9 +111,9 @@
                     </tr>
                     <tr>
                         <td>Saturday<br>27th April 2013</td>
-                        <td>4.30pm<br>7.30pm</td>
-                        <td>Chariot Procession<br>MJ Celebrations</td>
-                        <td><a href="images/map.jpg">Route map</a> to Samaj<br>Samaj Premises</td>
+                        <td>4.30pm<hr>7.30pm</td>
+                        <td>Chariot Procession<hr>Mahavir Jayanti Celebrations</td>
+                        <td><a href="images/map.jpg">Route map</a> to Samaj<hr>Samaj Premises</td>
                     </tr>
                     <tr>
                         <td>Sunday<br>28th April 2013</td>
@@ -130,7 +130,6 @@
                     <p style="text-align: center; color: red; font-weight: bold; font-family: Gabriela">Please come together with your family and friends to make this auspicious occassion a memorable one for all and be blessed by<br>Bhagwan Shree Mahavir.</p>
                 </div>
             </div>
-
         </div>
 
         <div id="charity" class="modal">
@@ -159,6 +158,26 @@
                     <img src="images/charity-photo5.jpg">
                     <img src="images/charity-photo6.jpg">
                 </div>
+            </div>
+        </div>
+
+        <div id="chariot" class="modal">
+
+            <div class="left-pillar">
+                <img src="images/left-pillar2.jpg">
+            </div>
+
+            <div class="right-pillar">
+                <img src="images/right-pillar2.jpg">
+            </div>
+
+            <div class="modal-container">
+
+                <h1 class="modal-header">A Journey of Dreams</h1>
+                <div class="modal-text">
+                    <p>The Damani Parivar will host a charitable event at the Paediatric Ward, <a target="_blank" href="http://www.hkl.gov.my/">General Hospital Kuala Lumpur</a> on Saturday, 27th April 2013. We plan to spend some time with the children at the Paediatric Ward with games, fun and gifts.</p>
+                </div>
+                <div id="map-placeholder"></div>
             </div>
 
         </div>
@@ -204,13 +223,19 @@
                     $("#past-events-icon img").animate({"marginLeft": "0px"}, 1000);
                 });
 
+                $("#pulsating-mahavir")
+                .css("left", widthOffset - $("#pulsating-mahavir").width()/2)
+                .css("top", heightOffset - $("#pulsating-mahavir").height()/2)
+
                 $("#programme-trigger, #charity-trigger, #chariot-trigger").leanModal({ opacity : 0.4, top: 40 });
-                $("#circle").css("left", widthOffset - 683/2).fadeIn(2000, function() {
+                $("#chariot-trigger").on("click", function(evt) {
+                    $("#map-placeholder").html('<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.my/maps/ms?msa=0&amp;msid=212006361685481703685.0004d80c0214696d4bf45&amp;ie=UTF8&amp;t=m&amp;z=16&amp;output=embed"></iframe><br /><small>View <a href="https://maps.google.com.my/maps/ms?msa=0&amp;msid=212006361685481703685.0004d80c0214696d4bf45&amp;ie=UTF8&amp;t=m&amp;z=16&amp;source=embed" style="color:#0000FF;text-align:left">Mahavir Jayanti 2013 Chariot Route</a> in a larger map</small>');
+                });
+
+                $("#circle").css("left", widthOffset - 683/2).fadeIn(1500, function() {
 
                     $("#pulsating-mahavir")
-                    .css("left", widthOffset - $("#pulsating-mahavir").width()/2)
-                    .css("top", heightOffset - $("#pulsating-mahavir").height()/2)
-                    .fadeIn(2000, function() {
+                    .fadeIn(1000, function() {
 
                         $("#warped").fadeIn(2000);
                         $(this).animate({ "top": "110px"}, 2000, function() {

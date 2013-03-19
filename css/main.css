@@ -22,6 +22,13 @@ body {
     overflow:hidden;
 }
 
+hr {
+    border: 0;
+    color: black;
+    background-color: black;
+    height: 1px;
+}
+
 h1 {
     font-family: 'Oleo Script Swash Caps', cursive;
     font-weight: 200;
@@ -127,7 +134,7 @@ th {
 
 td {
     padding: 4px;
-    vertical-align: top;
+    vertical-align: center;
     border: solid #ccc 1px;
 }
 
@@ -420,7 +427,7 @@ a.normal-link:hover {
     background-color: white;
     border: 5px solid #551033;
     border-radius: 30px;
-//    display:none;
+    display:none;
 }
 
 #charity-icon img {
