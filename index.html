@@ -228,7 +228,11 @@
                     $("#map-placeholder").html('<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.my/maps/ms?msa=0&amp;msid=212006361685481703685.0004d80c0214696d4bf45&amp;ie=UTF8&amp;t=m&amp;z=16&amp;output=embed"></iframe><br /><small>View <a href="https://maps.google.com.my/maps/ms?msa=0&amp;msid=212006361685481703685.0004d80c0214696d4bf45&amp;ie=UTF8&amp;t=m&amp;z=16&amp;source=embed" style="color:#0000FF;text-align:left">Mahavir Jayanti 2013 Chariot Route</a> in a larger map</small>');
                 });
 
-                $("#circle").css("left", widthOffset - 683/2).fadeIn(1500, function() {
+                $("#warped").css("top", heightOffset-683/2 + 40);
+                $("#circle")
+                .css("left", widthOffset - 683/2)
+                .css("top", heightOffset - 683/2)
+                .fadeIn(1500, function() {
 
                     $("#pulsating-mahavir")
                     .css("left", widthOffset - $("#pulsating-mahavir").width()/2)

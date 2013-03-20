@@ -389,7 +389,7 @@ a.normal-link:hover {
 #programme-icon {
     top: 100px;
     left: 80px;
-    border-radius: 30px;
+    border-radius: 15px;
     border: 5px solid maroon;
     display:none;
     background-image: -webkit-radial-gradient(center, circle farthest-corner, #FFFFFF 50%, #800000 100%);
@@ -426,12 +426,13 @@ a.normal-link:hover {
     right: 80px;
     background-color: white;
     border: 5px solid #551033;
-    border-radius: 30px;
+    border-radius: 15px;
     display:none;
 }
 
 #charity-icon img {
-    margin-left: 5px;
+    margin-left: 6px;
+    margin-top: 15px;
 }
 
 #charity-icon-text {
@@ -451,7 +452,10 @@ a.normal-link:hover {
     top: 400px;
     left: 80px;
     display:none;
-    border-radius: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    /* this hack fixes the overflow:hidden problem in Safari */
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
 }
 
 #chariot-icon-text {
@@ -471,7 +475,11 @@ a.normal-link:hover {
     top: 400px;
     right: 80px;
     display:none;
-    border-radius: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    /* this hack fixes the overflow:hidden problem in Safari */
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+
 }
 
 #past-events-icon-text {
