@@ -11,7 +11,7 @@
 
         <a id="programme-trigger" href="#programme" class="normal-a">
             <div id="programme-icon" class="pic">
-                <img src="images/cradle2.png" alt="portrait">
+                <img src="images/cradle.png" alt="portrait">
             </div>
             <div id="programme-icon-text">PROGRAMME</div>
         </a>
@@ -123,7 +123,7 @@
                     </tr>
                 </table>
                 <br>
-                <img src="images/divider.gif">
+                <img src="images/divider.png">
                 <div class="modal-text">
                     <p>This year's Mahavir Jayanti takes a new dimension as we have invited a professional singer <a target="_blank" href="http://www.jainsinger.com/">Vijaybhai Doshi</a> who has performed in many parts of the world with his melodious voice. Vijaybhai Doshi who also plays the musical keyboard will render beautiful, latest and lively stavans fit for this auspicious occassion of Mahavir Jayanti.</p>
                     <p>Together with Vijaybhai, we also will have Hiteshbhai Doshi in our midst who will complement Vijaybhai in his stavans. Hiteshbhai, a young and vibrant presenter, is able to reach the hearts of all present with his humour, simplicity of delivery in English/Gujarati for both young and old.</p>
@@ -186,7 +186,7 @@
         <script src="js/jquery.leanmodal.min.js"></script>
         <script>
 
-            $(document).ready(function() {
+            $(window).load(function() {
 
                 var widthOffset = $(window).width() / 2;
                 var heightOffset = $(window).height() / 2;
@@ -223,10 +223,6 @@
                     $("#past-events-icon img").animate({"marginLeft": "0px"}, 1000);
                 });
 
-                $("#pulsating-mahavir")
-                .css("left", widthOffset - $("#pulsating-mahavir").width()/2)
-                .css("top", heightOffset - $("#pulsating-mahavir").height()/2)
-
                 $("#programme-trigger, #charity-trigger, #chariot-trigger").leanModal({ opacity : 0.4, top: 40 });
                 $("#chariot-trigger").on("click", function(evt) {
                     $("#map-placeholder").html('<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.my/maps/ms?msa=0&amp;msid=212006361685481703685.0004d80c0214696d4bf45&amp;ie=UTF8&amp;t=m&amp;z=16&amp;output=embed"></iframe><br /><small>View <a href="https://maps.google.com.my/maps/ms?msa=0&amp;msid=212006361685481703685.0004d80c0214696d4bf45&amp;ie=UTF8&amp;t=m&amp;z=16&amp;source=embed" style="color:#0000FF;text-align:left">Mahavir Jayanti 2013 Chariot Route</a> in a larger map</small>');
@@ -235,6 +231,8 @@
                 $("#circle").css("left", widthOffset - 683/2).fadeIn(1500, function() {
 
                     $("#pulsating-mahavir")
+                    .css("left", widthOffset - $("#pulsating-mahavir").width()/2)
+                    .css("top", heightOffset - $("#pulsating-mahavir").height()/2)
                     .fadeIn(1000, function() {
 
                         $("#warped").fadeIn(2000);
