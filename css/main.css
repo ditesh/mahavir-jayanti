@@ -14,12 +14,19 @@
 }
 
 body {
+
+    /* MSIE support, argh! */
+    background: #D12020;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100, finishopacity=0, style=2);
+
+    /* For modern web browsers */
     background-image: -ms-radial-gradient(center, circle farthest-corner, #D12020 0%, #0A0202 100%);
     background-image: -moz-radial-gradient(center, circle farthest-corner, #D12020 0%, #0A0202 100%);
     background-image: -o-radial-gradient(center, circle farthest-corner, #D12020 0%, #0A0202 100%);
     background-image: -webkit-radial-gradient(center, circle farthest-corner, #D12020 0%, #0A0202 100%);
     background-image: radial-gradient(circle farthest-corner at center, #D12020 0%, #0A0202 100%);
     overflow:hidden;
+
 }
 
 hr {
@@ -74,13 +81,27 @@ h3 {
 
 }
 
-#container {
+.container {
     height: 100%;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: block;
     position: relative;
+}
+
+.initial-message-container {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    border: 3px solid maroon;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    background: white;
+    padding: 3px;
+    text-align: center;
+    font-family: "Gabriela";
 }
 
 #circle {

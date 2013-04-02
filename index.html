@@ -37,13 +37,17 @@
             <div id="past-events-icon-text">1998 to 2012</div>
         </a>
 
-        <div id="container">
+        <div class="container">
             <img id="circle" src="images/circle.png">
             <img id="pulsating-mahavir" class="animated pulse" src="images/new-mahavir.png">
         </div>
 
-        <div id='warped' class="warped">
-                 <span class='w0'>S</span><span class='w1'>h</span><span class='w2'>r</span><span class='w3'>e</span><span class='w4'>e</span><span class='w5'> </span><span class='w6'>M</span><span class='w7'>a</span><span class='w8'>h</span><span class='w9'>a</span><span class='w10'>v</span><span class='w11'>i</span><span class='w12'>r</span><span class='w13'>a</span><span class='w14'>y</span><span class='w15'> </span><span class='w16'>N</span><span class='w17'>a</span><span class='w18'>m</span><span class='w19'>a</span><span class='w20'>h</span>
+        <div class="initial-message-container">
+            Site is loading, please wait ...
+        </div>
+
+        <div id="warped" class="warped">
+             <span class='w0'>S</span><span class='w1'>h</span><span class='w2'>r</span><span class='w3'>e</span><span class='w4'>e</span><span class='w5'> </span><span class='w6'>M</span><span class='w7'>a</span><span class='w8'>h</span><span class='w9'>a</span><span class='w10'>v</span><span class='w11'>i</span><span class='w12'>r</span><span class='w13'>a</span><span class='w14'>y</span><span class='w15'> </span><span class='w16'>N</span><span class='w17'>a</span><span class='w18'>m</span><span class='w19'>a</span><span class='w20'>h</span>
         </div>
 
         <div id="content">
@@ -80,11 +84,11 @@
         <div id="programme" class="modal">
 
             <div class="left-pillar">
-                <img src="images/left-pillar2.jpg">
+                <img src="images/left-pillar.jpg">
             </div>
 
             <div class="right-pillar">
-                <img src="images/right-pillar2.jpg">
+                <img src="images/right-pillar.jpg">
             </div>
 
             <div class="modal-container">
@@ -135,11 +139,11 @@
         <div id="charity" class="modal">
 
             <div class="left-pillar">
-                <img src="images/left-pillar2.jpg">
+                <img src="images/left-pillar.jpg">
             </div>
 
             <div class="right-pillar">
-                <img src="images/right-pillar2.jpg">
+                <img src="images/right-pillar.jpg">
             </div>
 
             <div class="modal-container">
@@ -164,11 +168,11 @@
         <div id="chariot" class="modal">
 
             <div class="left-pillar">
-                <img src="images/left-pillar2.jpg">
+                <img src="images/left-pillar.jpg">
             </div>
 
             <div class="right-pillar">
-                <img src="images/right-pillar2.jpg">
+                <img src="images/right-pillar.jpg">
             </div>
 
             <div class="modal-container">
@@ -186,7 +190,9 @@
         <script src="js/jquery.leanmodal.min.js"></script>
         <script>
 
-            $(window).load(function() {
+            var callback = function() {
+
+                $(".initial-message-container").hide();
 
                 var widthOffset = $(window).width() / 2;
                 var heightOffset = $(window).height() / 2;
@@ -195,7 +201,7 @@
                 $("#programme-icon, #programme-icon-text")
                 .hover(function() {
                     $("#programme-icon").addClass("animated swing");
-                }, function() {
+                    }, function() {
                     $("#programme-icon").removeClass("animated swing");
                 });
 
@@ -203,7 +209,7 @@
                 $("#charity-icon, #charity-icon-text")
                 .hover(function() {
                     $("#charity-icon").addClass("morph");
-                },function() {
+                    },function() {
                     $("#charity-icon").removeClass("morph");
                 });
 
@@ -211,7 +217,7 @@
                 $("#chariot-icon, #chariot-icon-text")
                 .hover(function() {
                     $("#chariot-image").animate({ opacity: 0}, 1000);
-                }, function() {
+                    }, function() {
                     $("#chariot-image").animate({ opacity: 1}, 1000);
                 });
 
@@ -219,7 +225,7 @@
                 $("#past-events-icon, #past-events-icon-text")
                 .hover(function() {
                     $("#past-events-icon img").animate({"marginLeft": "-100px"}, 1000);
-                }, function() {
+                    }, function() {
                     $("#past-events-icon img").animate({"marginLeft": "0px"}, 1000);
                 });
 
@@ -276,13 +282,22 @@
                 _gaq.push(['_trackPageview']);
 
                 (function() {
-                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                 })();
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
 
-             });
+            }
 
+            if ($.browser === "msie") {
+
+                $(".initial-message-container").html("This site requires Firefox or Chrome browser.");
+                callback = function() {};
+
+            }
+
+            $(window).load(callback);
+            
         </script>
     </body>
 </html>
