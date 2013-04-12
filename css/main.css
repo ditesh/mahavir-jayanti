@@ -476,7 +476,7 @@ a.normal-link:hover {
 }
 
 #chariot-icon {
-    top: 400px;
+    top: 360px;
     left: 80px;
     display:none;
     border-radius: 15px;
@@ -488,7 +488,7 @@ a.normal-link:hover {
 #chariot-icon-text {
     z-index: 3;
     position:absolute;
-    top: 570px;
+    top: 530px;
     left: 80px;
     width: 155px;
     font-family: "Tahoma";
@@ -499,7 +499,7 @@ a.normal-link:hover {
 }
 
 #past-events-icon {
-    top: 400px;
+    top: 360px;
     right: 80px;
     display:none;
     border-radius: 15px;
@@ -512,7 +512,7 @@ a.normal-link:hover {
 #past-events-icon-text {
     z-index: 3;
     position:absolute;
-    top: 570px;
+    top: 530px;
     right: 80px;
     width: 155px;
     font-family: "Tahoma";
