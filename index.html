@@ -210,8 +210,9 @@
 
                 $(".initial-message-container").hide();
 
+                var height = $(window).height();
                 var widthOffset = $(window).width() / 2;
-                var heightOffset = $(window).height() / 2;
+                var heightOffset = height / 2;
 
                 // Event handlers for programme icon
                 $("#programme-icon, #programme-icon-text")
@@ -250,9 +251,18 @@
                     $("#map-placeholder").html('<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.my/maps/ms?msa=0&amp;msid=212006361685481703685.0004d80c0214696d4bf45&amp;ie=UTF8&amp;t=m&amp;ll=3.133639,101.671686&amp;spn=0.007499,0.009141&amp;z=16&amp;output=embed"></iframe><br /><small>View <a href="https://maps.google.com.my/maps/ms?msa=0&amp;msid=212006361685481703685.0004d80c0214696d4bf45&amp;ie=UTF8&amp;t=m&amp;ll=3.133639,101.671686&amp;spn=0.007499,0.009141&amp;z=16&amp;source=embed" style="color:#0000FF;text-align:left">Mahavir Jayanti 2013 Chariot Route</a> in a larger map</small>');
                 });
 
+                // Fix placements
                 $("#warped")
                 .css("top", heightOffset-683/2 + 40)
                 .css("left", widthOffset-683 + 45);
+
+                $("#programme-icon, #charity-icon").css("top", $(window).height()/6);
+                $("#programme-icon-text, #charity-icon-text").css("top", $(window).height()/6 + 170);
+
+                $("#chariot-icon, #past-events-icon").css("top", $(window).height()*3/6 + 50);
+                $("#chariot-icon-text, #past-events-icon-text").css("top", $(window).height()*3/6 + 220);
+
+                $("#content").css("top", heightOffset - 683/2 + 115);
 
                 $("#circle")
                 .css("left", widthOffset - 683/2)
@@ -265,7 +275,8 @@
                     .fadeIn(1000, function() {
 
                         $("#warped").fadeIn(2000);
-                        $(this).animate({ "top": "110px"}, 2000, function() {
+                        $(this).animate({ "top": (heightOffset - 683/2 + 110) +  "px"}, 2000, function() {
+
                             $("#first-h1").fadeIn(function() {
 
                                 $("h2").fadeIn(1000, function() {
